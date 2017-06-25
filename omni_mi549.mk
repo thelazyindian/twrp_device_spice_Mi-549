@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2016 The CyanogenMod Project
+# Copyright (C) 2016 Satyabrat Sahoo
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,6 +15,10 @@
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
+
+# Inherit some common Omni stuff.
+$(call inherit-product, vendor/omni/config/gsm.mk)
+$(call inherit-product, vendor/omni/config/common.mk)
 
 # Screen density
 PRODUCT_AAPT_CONFIG := normal hdpi
@@ -34,9 +38,12 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/kernel:kernel
 
 # Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := Mi-549
-PRODUCT_NAME := full_Mi-549
+PRODUCT_DEVICE := mi549
+PRODUCT_NAME := omni_mi549
 PRODUCT_BRAND := Spice
 PRODUCT_MODEL := Spice Mi-549
 PRODUCT_MANUFACTURER := Spice
 
+# Default Props
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    ro.product.device=Mi-549
