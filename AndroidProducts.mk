@@ -14,6 +14,6 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-	$(LOCAL_DIR)/omni_sprout.mk \
-	$(LOCAL_DIR)/full_sprout.mk
+	$(LOCAL_DIR)/omni_Mi-549.mk \
+	$(LOCAL_DIR)/full_Mi-549.mk
 
