@@ -3,17 +3,18 @@
 # specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
 
 /misc          emmc   /dev/misc
-/boot          emmc		/dev/bootimg
+/boot          emmc	  /dev/bootimg
 /recovery      emmc   /dev/recovery             flags=display="Recovery";backup=1
-/system        ext4		/dev/block/mmcblk0p5
-/data          ext4		/dev/block/mmcblk0p7
-/cache         ext4		/dev/block/mmcblk0p6
+/system        ext4	  /dev/block/mmcblk0p5
+/data          ext4	  /dev/block/mmcblk0p7
+/cache         ext4	  /dev/block/mmcblk0p6
 /protect_f     ext4   /emmc@protect_f
 /protect_s     ext4   /emmc@protect_s
-/nvram         emmc   /dev/nvram                flags=display="nvram";backup=1
-/uboot         emmc   /dev/uboot                flags=display="uboot";backup=1
-/logo          emmc   /dev/logo                 flags=display="logo";backup=1
+/nvram         emmc   /dev/nvram                flags=display="Nvram";backup=1
+/sec_ro        emmc   /dev/block/mmcblk0p4      flags=subpartitionof=/nvram;backup=1
+/uboot         emmc   /dev/uboot                flags=display="Uboot";backup=1
+/logo          emmc   /dev/logo                 flags=display="Boot Logo";backup=1
 
-/external_sd   vfat   /dev/block/mmcblk1p1      flags=display="MicroSD";storage;wipeingui;removable
-/usb-otg       vfat   /devices/platform/mt_usb* flags=display="USB OTG";storage;wipeingui;removable
+/external_sd   vfat   /dev/block/mmcblk1p1 /dev/block/mmcblk1 flags=display="MicroSD";storage;wipeingui;removable
+/usb-otg       vfat   /dev/block/sda1      /dev/block/sda     flags=display="USB OTG";storage;wipeingui;removable
 
