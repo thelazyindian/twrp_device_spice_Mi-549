@@ -28,10 +28,6 @@ PRODUCT_AAPT_PREF_CONFIG := hdpi
 TARGET_SCREEN_HEIGHT := 960
 TARGET_SCREEN_WIDTH := 540
 
-# Charger
-PRODUCT_PACKAGES += \
-    charger_res_images
-
 # Kernel
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/root/etc/twrp.fstab:recovery/root/etc/twrp.fstab \
